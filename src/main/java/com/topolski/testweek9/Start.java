@@ -28,6 +28,7 @@ public class Start {
         readDB();
     }
 
+    @CountAspect
     public void readFile() {
         File file = new File("DATA.csv");
         String[] strings;
@@ -42,10 +43,12 @@ public class Start {
         }
     }
 
+    @CountAspect
     public void saveDB() {
         personRepo.saveAll(personList);
     }
 
+    @CountAspect
     public void readDB() {
         personList = personRepo.findAll();
     }
